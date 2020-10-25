@@ -3,79 +3,81 @@ import Router from 'vue-router'
 import Head from 'vue-head'
 import Home from '@/views/Home'
 import CheckLogin from '@/views/CheckLogin'
-import { isNil } from 'lodash'
+import {isNil} from 'lodash'
 import store from '@/store'
+import MainNavbar from "@/layout/MainNavbar";
+import MainFooter from "@/layout/MainFooter";
+import Portfolio from "@/views/Portfolio";
 
-Vue.use(Router)
-
-/* If you don't know about VueHead, please refer to https://github.com/ktquez/vue-head */
+Vue.use(Router);
 
 Vue.use(Head, {
-  complement: process.env.VUE_APP_TITLE
-})
-
-/* If you don't know about VueRouter, please refer to https://router.vuejs.org/ */
+    complement: process.env.VUE_APP_TITLE
+});
 
 const router = new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: Home,
-      meta: {
-        authNotRequired: true
-      }
-    },
-    {
-      path: '/check-login',
-      name: 'check-login',
-      component: CheckLogin,
-      meta: {
-        authNotRequired: true
-      }
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () =>
-        import(/* webpackChunkName: "client-chunk-login" */ '@/views/Login.vue'),
-      meta: {
-        authNotRequired: true
-      }
-    },
-    {
-      path: '/products',
-      name: 'products',
-      component: () =>
-        import(/* webpackChunkName: "client-chunk-products" */ '@/views/Products.vue')
-    },
-    {
-      path: '/products/:id',
-      name: 'product',
-      props: true,
-      component: () =>
-        import(/* webpackChunkName: "client-chunk-product-details" */ '@/views/Product.vue')
-    },
-    { path: '*', redirect: '/home' }
-  ]
-})
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes: [
+        {
+            path: '/home',
+            name: 'home',
+            components: {default: Home, header: MainNavbar, footer: MainFooter},
+            props: {
+                header: {colorOnScroll: 350, menu: 'home'},
+                footer: {backgroundColor: 'black'}
+            },
+            meta: {
+                authNotRequired: true
+            }
+        },
+        {
+            path: '/portfolio',
+            name: 'portfolio',
+            components: {default: Portfolio, header: MainNavbar, footer: MainFooter},
+            props: {
+                header: {colorOnScroll: 250, menu: 'portfolio'},
+                footer: {backgroundColor: 'black'}
+            },
+            meta: {
+                authNotRequired: true
+            }
+        },
+        {
+            path: '/check-login',
+            name: 'check-login',
+            component: CheckLogin,
+            meta: {
+                authNotRequired: true
+            }
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: () =>
+                import(/* webpackChunkName: "client-chunk-login" */ '@/views/Login.vue'),
+            meta: {
+                authNotRequired: true
+            }
+        },
+        {path: '*', redirect: '/home'}
+    ]
+});
 
 /**
  * Handle user redirections
  */
 // eslint-disable-next-line consistent-return
 router.beforeEach((to, from, next) => {
-  if (
-    !(to.meta && to.meta.authNotRequired) &&
-    isNil(store.state.authentication.user)
-  ) {
-    const path =
-      store.state.authentication.user === null ? '/login' : '/check-login'
-    return next(`${path}?redirectUrl=${to.path}`)
-  }
-  next()
-})
+    if (
+        !(to.meta && to.meta.authNotRequired) &&
+        isNil(store.state.authentication.user)
+    ) {
+        const path =
+            store.state.authentication.user === null ? '/login' : '/check-login';
+        return next(`${path}?redirectUrl=${to.path}`)
+    }
+    next()
+});
 
 export default router

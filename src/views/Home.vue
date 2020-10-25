@@ -1,69 +1,92 @@
 <template>
-  <div class="page-wrapper">
-    <h1 class="home-page-title">{{ appTitle }}</h1>
-    <img alt="logo-bento" class="logo" src="@/assets/img/bento-starter.svg" />
-
-    <a
-      rel="noopener"
-      class="documentation-link"
-      target="_blank"
-      href="https://bento-starter.netlify.com/"
-      >Documentation →</a
-    >
-  </div>
+    <div class="wrapper profile-page">
+        <div class="page-header header-filter" :style="headerStyle">
+            <div class="title-welcome">
+                <h4 class="title">{{$t('welcomeMsg')}}</h4>
+            </div>
+        </div>
+        <div class="main main-raised">
+            <div class="section profile-content" id="profile">
+                <div class="container">
+                    <profile></profile>
+                </div>
+            </div>
+            <div class="section section-experience" id="experience">
+                <div class="container">
+                    <experience></experience>
+                </div>
+            </div>
+            <div class="section section-knowledge" id="knowledge">
+                <div class="container">
+                    <knowledge></knowledge>
+                </div>
+            </div>
+            <div class="section section-work" id="work">
+                <div class="container">
+                    <work></work>
+                </div>
+            </div>
+            <div class="section section-work">
+                <div class="md-layout-item text-center">
+                    <router-link to="/portfolio">
+                        <md-button class="md-success md-lg">{{$t('portfolio_button')}}</md-button>
+                    </router-link>
+                </div>
+            </div>
+            <div class="section section-contact" id="contact">
+                <div class="container">
+                    <contact></contact>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+    import Contact from "./components/ContactSection";
+    import Experience from "./components/ExperienceSection";
+    import Knowledge from "./components/KnowledgeSection";
+    import Profile from "./components/ProfileSection";
+    import Work from "./components/WorkSection";
 
-export default {
-  head() {
-    return {
-      title: {
-        inner: 'Home'
-      },
-      meta: [
-        {
-          name: 'description',
-          content: `${this.appTitle} home page`,
-          id: 'desc'
+    export default {
+        components: {
+            Contact,
+            Experience,
+            Knowledge,
+            Profile,
+            Work
+        },
+        name: "index",
+        bodyClass: "index-page",
+        props: {
+            header: {
+                type: String,
+                /* eslint-disable global-require */
+                default: require("@/assets/img/rinde.jpg")
+                /* eslint-enable global-require */
+            }
+        },
+        computed: {
+            headerStyle() {
+                return {
+                    backgroundImage: `url(${this.header})`
+                };
+            },
         }
-      ]
-    }
-  },
-  computed: mapState('app', ['appTitle'])
-}
+    };
 </script>
 
-<style lang="scss" scoped>
-@import '@/theme/variables.scss';
+<style lang="scss">
+    .section-download {
+        .md-button + .md-button {
+            margin-left: 5px;
+        }
+    }
 
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .logo {
-    margin-bottom: 3rem;
-  }
-
-  .home-page-title {
-    text-align: center;
-  }
-
-  .documentation-link {
-    display: inline-block;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #5d6788;
-    padding: 0.8rem 1.6rem;
-    border-radius: 4px;
-    transition: background-color 0.1s ease;
-    box-sizing: border-box;
-    text-decoration: none;
-    width: fit-content;
-    font-weight: 500;
-  }
-}
+    @media all and (min-width: 991px) {
+        .btn-container {
+            display: flex;
+        }
+    }
 </style>

@@ -1,0 +1,19 @@
+.title{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    min-height: 32px;
+}
+
+.section-work{
+    background: #EEEEEE;
+    padding-top: 8px;
+}
+
+.section-experience{
+    background: #EEEEEE;
+    padding-top: 8px;
+}
+
+.section-knowledge{
+    padding-top: 8px;
+}

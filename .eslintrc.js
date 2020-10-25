@@ -1,8 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
-    jest: true
+    node: true
   },
   extends: [
     'airbnb-base',
@@ -18,7 +17,8 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-return-assign': 'off',
     'no-var': 2,
-    'prefer-const': 2
+    'prefer-const': 2,
+    "vue/no-use-v-if-with-v-for": "off"
   },
   parserOptions: {
     parser: 'babel-eslint'
