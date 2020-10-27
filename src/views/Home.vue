@@ -63,7 +63,7 @@
             header: {
                 type: String,
                 /* eslint-disable global-require */
-                default: require("@/assets/img/rinde.jpg")
+                default: require("@/assets/img/efeu.jpg")
                 /* eslint-enable global-require */
             }
         },

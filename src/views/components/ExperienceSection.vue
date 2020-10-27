@@ -7,7 +7,7 @@
             <div class="md-layout">
                 <div class="md-layout-item md-medium-size-50 md-small-size-100">
                     <div class="info">
-                        <md-card>
+                        <md-card class="expertise-card">
                             <md-card-header class="md-card-header-info">
                                 <slot name="title">
                                     <h4 class="title">{{$t('education')}}</h4>
@@ -45,9 +45,8 @@
                                     </md-card-content>
                                 </md-card>
                             </md-card-content>
-
-                            <md-divider class="expertise-divider"></md-divider>
-
+                        </md-card>
+                        <md-card class="expertise-card">
                             <md-card-content class="text-left">
                                 <md-card class="inner-card">
                                     <md-card-content>
@@ -80,9 +79,8 @@
                                     </md-card-content>
                                 </md-card>
                             </md-card-content>
-
-                            <md-divider class="expertise-divider"></md-divider>
-
+                        </md-card>
+                        <md-card class="expertise-card">
                             <md-card-content class="text-left">
                                 <md-card class="inner-card">
                                     <md-card-content>
@@ -101,7 +99,7 @@
 
                 <div class="md-layout-item md-medium-size-50 md-small-size-100">
                     <div class="info">
-                        <md-card>
+                        <md-card class="expertise-card">
                             <md-card-header class="md-card-header-primary">
                                 <slot name="title">
                                     <h4 class="title">{{$t('expertise')}}</h4>
@@ -130,26 +128,40 @@
                                                 <md-card-content>
                                                     <h6>{{$t('tasks')}}</h6>
                                                     <p>{{$t('expertise1_2')}}</p>
-                                                    <h6>{{$t('detailed')}}</h6>
-                                                    <p>
-                                                        {{$t('august')}} 2019 - {{$t('today')}}<br/>
-                                                        <small><strong>Software Developer</strong>,
-                                                            {{$t('expertise1_1')}}</small>
-                                                    </p>
-                                                    <p>
-                                                        {{$t('august')}} 2017 - {{$t('july')}} 2019<br/>
-                                                        <small><strong>Agile Java Developer</strong>, Sparda
-                                                            Datenverarbeitung eG (SDV-IT)</small>
-                                                    </p>
+                                                    <md-divider></md-divider>
+                                                    <div class="table">
+                                                        <div class="table-row">
+                                                            <div>
+                                                                <small>{{$t('august')}} 2019 - {{$t('today')}}</small>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    <strong>Software Developer</strong><br/>
+                                                                    {{$t('expertise1_1')}}
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="table-row">
+                                                            <div>
+                                                                <small>{{$t('august')}} 2017 - {{$t('july')}}
+                                                                    2019</small>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    <strong>Agile Java Developer</strong><br/>
+                                                                    Sparda Datenverarbeitung eG (SDV-IT)
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </md-card-content>
                                             </md-card-expand-content>
                                         </md-card-expand>
                                     </md-card-content>
                                 </md-card>
                             </md-card-content>
-
-                            <md-divider class="expertise-divider"></md-divider>
-
+                        </md-card>
+                        <md-card class="expertise-card">
                             <md-card-content class="text-left">
                                 <md-card class="inner-card">
                                     <md-card-content>
@@ -172,27 +184,42 @@
                                                 <md-card-content>
                                                     <h6>{{$t('tasks')}}</h6>
                                                     <p>{{$t('expertise2_2')}}</p>
-                                                    <h6>{{$t('detailed')}}</h6>
-                                                    <p>
-                                                        <small>{{$t('january')}} 2017 - {{$t('july')}} 2017<br/>
-                                                            <strong>Expert IT Business Services</strong>,
-                                                            {{$t('expertise2_1')}}</small>
-                                                    </p>
-                                                    <p>
-                                                        <small>{{$t('march')}} 2014 - {{$t('december')}} 2016<br/>
-                                                            <strong>Expert IT Systems Development</strong>,
-                                                            Consorsbank, BNP Paribas S.A. Niederlassung
-                                                            Deutschland, ehem. Cortal Consors</small>
-                                                    </p>
+                                                    <md-divider></md-divider>
+                                                    <div class="table">
+                                                        <div class="table-row">
+                                                            <div>
+                                                                <small>{{$t('january')}} 2017 - {{$t('july')}}
+                                                                    2017</small>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    <strong>Expert IT Business Services</strong><br/>
+                                                                    {{$t('expertise2_1')}}
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="table-row">
+                                                            <div>
+                                                                <small>{{$t('march')}} 2014 - {{$t('december')}}
+                                                                    2016</small>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    <strong>Expert IT Systems Development</strong><br/>
+                                                                    Consorsbank, BNP Paribas S.A. Niederlassung
+                                                                    Deutschland, ehem. Cortal Consors
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </md-card-content>
                                             </md-card-expand-content>
                                         </md-card-expand>
                                     </md-card-content>
                                 </md-card>
                             </md-card-content>
-
-                            <md-divider class="expertise-divider"></md-divider>
-
+                        </md-card>
+                        <md-card class="expertise-card">
                             <md-card-content class="text-left">
                                 <md-card class="inner-card">
                                     <md-card-content>
@@ -258,6 +285,29 @@
         .md-card-expand {
             line-height: normal;
             margin-top: -5px;
+        }
+    }
+
+    .expertise-card {
+        margin-bottom: 0;
+        margin-top: 8px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }
+
+    .table {
+        display: table;
+
+        .table-row {
+            display: table-row;
+
+            div {
+                padding: 8px;
+                display: table-cell;
+                align-content: center;
+            }
         }
     }
 </style>

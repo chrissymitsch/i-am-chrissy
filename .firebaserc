@@ -1,6 +1,6 @@
 {
   "projects": {
     "default": "bento-starter",
-    "hello-i-am-online": "hello-i-am-online"
+    "cm-cvonline": "cm-cvonline"
   }
 }
