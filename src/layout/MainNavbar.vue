@@ -76,6 +76,12 @@
                                                            class="dropdown-item">{{$t('work')}}
                                                         </a>
                                                     </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)"
+                                                           @click="scrollToElement('contact')"
+                                                           class="dropdown-item">{{$t('contact')}}
+                                                        </a>
+                                                    </li>
                                                     <li class="dropdown-divider"></li>
                                                     <li>
                                                         <router-link to="/portfolio" class="dropdown-item">
@@ -119,61 +125,45 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <router-link v-if="menu == 'portfolio'" to="/home">
-                                                    <md-list-item>
-                                                        <i class="fas fa-home"></i>
-                                                        <p>{{$t('home')}}</p>
-                                                    </md-list-item>
-                                                </router-link>
                                                 <!-- END -->
                                             </drop-down>
                                         </div>
                                     </a>
                                 </li>
 
+                                <router-link v-if="menu == 'portfolio'" to="/home">
+                                    <md-list-item href="#" target="_blank">
+                                        <i class="fas fa-home"></i>
+                                        <p>{{$t('home')}}</p>
+                                    </md-list-item>
+                                </router-link>
                                 <md-list-item
                                         href="https://www.xing.com/profile/Christine_Mitsch2"
-                                        target="_blank"
-                                >
+                                        target="_blank">
                                     <i class="fab fa-xing"></i>
                                     <p class="hidden-lg">Xing</p>
-                                    <md-tooltip md-direction="bottom"
-                                    >Xing
-                                    </md-tooltip
-                                    >
+                                    <md-tooltip md-direction="bottom">Xing</md-tooltip>
                                 </md-list-item>
                                 <md-list-item
                                         href="https://www.linkedin.com/in/christinemitsch/"
-                                        target="_blank"
-                                >
+                                        target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                     <p class="hidden-lg">LinkedIn</p>
-                                    <md-tooltip md-direction="bottom"
-                                    >LinkedIn
-                                    </md-tooltip
-                                    >
+                                    <md-tooltip md-direction="bottom">LinkedIn</md-tooltip>
                                 </md-list-item>
                                 <md-list-item
                                         href="https://github.com/chrissymitsch"
-                                        target="_blank"
-                                >
+                                        target="_blank">
                                     <i class="fab fa-github"></i>
                                     <p class="hidden-lg">GitHub</p>
-                                    <md-tooltip md-direction="bottom"
-                                    >GitHub
-                                    </md-tooltip
-                                    >
+                                    <md-tooltip md-direction="bottom">GitHub</md-tooltip>
                                 </md-list-item>
                                 <md-list-item
                                         href="https://www.grin.com/user/1868641"
-                                        target="_blank"
-                                >
+                                        target="_blank">
                                     <i class="material-icons">library_books</i>
                                     <p class="hidden-lg">Grin</p>
-                                    <md-tooltip md-direction="bottom"
-                                    >Grin Autorenprofil
-                                    </md-tooltip
-                                    >
+                                    <md-tooltip md-direction="bottom">Grin Autorenprofil</md-tooltip>
                                 </md-list-item>
                             </md-list>
                         </div>
