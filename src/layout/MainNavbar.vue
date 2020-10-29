@@ -8,12 +8,35 @@
                 :color-on-scroll="colorOnScroll">
             <div class="md-toolbar-row md-collapse-lateral">
                 <div class="md-toolbar-section-start">
-                    <md-button class="md-just-icon md-simple md-sm" :class="isSelectedFlag(entry.language)"
-                               v-for="entry in languages" :key="entry.title"
-                               @click="changeLocale(entry.language)">
-                        <flag :iso="entry.flag" v-bind:squared="false"/>
-                        <md-tooltip md-direction="bottom">{{entry.title}}</md-tooltip>
-                    </md-button>
+                    <md-list>
+                        <li class="md-list-item">
+                            <a href="javascript:void(0)"
+                               class="md-list-item-router md-list-item-container md-button-clean dropdown">
+                                <div class="md-list-item-content">
+
+                                    <drop-down direction="down">
+                                        <md-button slot="title"
+                                                   class="dropdown-toggle md-just-icon md-simple md-sm">
+                                            <flag :iso="selectedFlag" v-bind:squared="false"/>
+                                        </md-button>
+
+                                        <!-- HOME NAVIGATION -->
+                                        <ul class="dropdown-menu dropdown-menu-left">
+                                            <li v-for="entry in languages" :key="entry.title">
+                                                <a class="dropdown-item" @click="changeLocale(entry)"
+                                                   href="javascript:void(0)">
+                                                    <flag :iso="entry.flag" v-bind:squared="false"/>
+                                                    <span class="flaglabel">{{entry.title}}</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- END -->
+                                    </drop-down>
+
+                                </div>
+                            </a>
+                        </li>
+                    </md-list>
                 </div>
                 <div class="toolbar-titles toolbar-title">
                     <h3 class="title">Christine Mitsch</h3>
@@ -228,7 +251,8 @@
             languages: [
                 {flag: 'gb', language: 'en', title: 'English'},
                 {flag: 'de', language: 'de', title: 'Deutsch'}
-            ]
+            ],
+            selectedFlag: "gb"
         }),
         methods: {
             bodyClick() {
@@ -272,10 +296,8 @@
                 }
             },
             changeLocale(locale) {
-                i18n.locale = locale;
-            },
-            isSelectedFlag(locale) {
-                return i18n.locale === locale ? "selectedFlag" : "";
+                i18n.locale = locale.language;
+                this.selectedFlag = locale.flag;
             }
         },
         mounted() {
@@ -291,9 +313,7 @@
 <style lang="scss">
     @import '../assets/scss/material-kit/_variables';
 
-    .selectedFlag {
-        .md-button-content {
-            border: 2px solid $brand-success !important;
-        }
+    .flaglabel {
+        padding-left: 8px;
     }
 </style>

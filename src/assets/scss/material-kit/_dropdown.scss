@@ -115,13 +115,18 @@
 
 }
 
-.dropdown .dropdown-menu.dropdown-menu-right {
+.dropdown .dropdown-menu.dropdown-menu-right, .dropdown .dropdown-menu.dropdown-menu-left {
   transform-origin: 100% 0;
 }
 
 .dropdown-menu-right{
   right: 0;
   left: auto;
+}
+
+.dropdown-menu-left{
+  left: 0;
+  right: auto;
 }
 
 .md-list-item.dropdown{

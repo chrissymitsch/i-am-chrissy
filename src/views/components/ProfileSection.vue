@@ -2,13 +2,13 @@
     <div class="wrapper">
         <div class="md-layout">
             <div class="md-layout-item md-size-70 mx-auto">
+                <div class="avatar">
+                    <img :src="img"
+                         alt="Circle Image"
+                         class="img-raised rounded-circle img-fluid"
+                    />
+                </div>
                 <div class="profile">
-                    <div class="avatar">
-                        <img :src="img"
-                             alt="Circle Image"
-                             class="img-raised rounded-circle img-fluid"
-                        />
-                    </div>
                     <div class="name">
                         <h2 class="title">Christine Mitsch</h2>
                         <md-button

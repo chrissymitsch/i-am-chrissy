@@ -10,7 +10,7 @@
   }
 
   .title-welcome h4 {
-    margin-top: -80px;
+    margin-top: -90px;
     color: $white-color;
   }
 
@@ -49,19 +49,18 @@
     }
   }
 
-  .profile {
+  .avatar {
     text-align: center;
 
     img {
       max-width: 260px;
       width: 100%;
-      margin: 0 auto;
-      @include transform-translate-y(-65%);
+      margin: -175px auto 0 auto;
     }
+  }
 
-    .name {
-      margin-top: -180px;
-    }
+  .profile {
+    text-align: center;
   }
 
   .follow {
