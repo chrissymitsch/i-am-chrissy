@@ -47,14 +47,22 @@
                 </div>
                 <div class="md-layout-item md-size-50 md-small-size-100">
                     <div class="md-layout md-gutter md-alignment-top-left">
-                        <div class="md-layout-item md-size-30"><p><strong>{{$t('keywords')}}:</strong></p></div>
-                        <div class="md-layout-item md-size-70">
-                            <badge type="primary">{{$t('bioTxt0')}}</badge>
-                            <badge type="info">{{$t('bioTxt1')}}</badge>
-                            <badge type="success">{{$t('bioTxt2')}}</badge>
-                            <badge type="warning">Agile Ambassador</badge>
-                            <badge type="danger">NG Nerd</badge>
-                            <badge type="rose">Webdesign Weeb</badge>
+                        <div class="md-layout-item md-size-100">
+                            <vue-word-cloud
+                                    style="height: 200px; width: 250px;"
+                                    :words="[
+                                        ['agile', 20],
+                                        ['diversive', 5],
+                                        ['creative', 5],
+                                        ['adaptable', 5],
+                                        ['Angular', 10],
+                                        ['Java', 10],
+                                        ['Gamification', 8],
+                                        ['Webdesign', 6],
+                                        ]"
+                                    :color="([, weight]) => weight > 19 ? '#00bcd4' : weight > 9 ? '#9c27b0' : weight > 7 ? '#4caf50' : weight > 5 ? '#ff9800' : '#e91e63'"
+                                    font-family="Roboto"
+                            />
                         </div>
                     </div>
                 </div>
@@ -65,11 +73,11 @@
 
 
 <script>
-    import Badge from "../../components/Badge";
+    import VueWordCloud from 'vuewordcloud';
 
     export default {
         name: "profile",
-        components: {Badge},
+        components: {VueWordCloud},
         props: {
             img: {
                 type: String,

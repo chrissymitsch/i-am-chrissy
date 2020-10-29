@@ -105,12 +105,6 @@
                                                            class="dropdown-item">{{$t('contact')}}
                                                         </a>
                                                     </li>
-                                                    <li class="dropdown-divider"></li>
-                                                    <li>
-                                                        <router-link to="/portfolio" class="dropdown-item">
-                                                            {{$t('portfolio')}}
-                                                        </router-link>
-                                                    </li>
                                                 </ul>
                                                 <!-- END -->
 

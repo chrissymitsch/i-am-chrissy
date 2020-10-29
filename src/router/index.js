@@ -7,7 +7,6 @@ import {isNil} from 'lodash'
 import store from '@/store'
 import MainNavbar from "@/layout/MainNavbar";
 import MainFooter from "@/layout/MainFooter";
-import Portfolio from "@/views/Portfolio";
 
 Vue.use(Router);
 
@@ -25,18 +24,6 @@ const router = new Router({
             components: {default: Home, header: MainNavbar, footer: MainFooter},
             props: {
                 header: {colorOnScroll: 350, menu: 'home'},
-                footer: {backgroundColor: 'black'}
-            },
-            meta: {
-                authNotRequired: true
-            }
-        },
-        {
-            path: '/portfolio',
-            name: 'portfolio',
-            components: {default: Portfolio, header: MainNavbar, footer: MainFooter},
-            props: {
-                header: {colorOnScroll: 250, menu: 'portfolio'},
                 footer: {backgroundColor: 'black'}
             },
             meta: {

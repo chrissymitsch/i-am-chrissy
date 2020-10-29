@@ -4,6 +4,7 @@ import "vue-material/dist/vue-material.min.css";
 import "@/assets/scss/material-kit.scss";
 import "@/assets/hello.css";
 import VueCarousel from "vue-carousel";
+import VueWordCloud from 'vuewordcloud';
 import i18n from '@/plugins/i18n';
 import FlagIcon from 'vue-flag-icon';
 import globalMixins from "@/plugins/globalMixins";
@@ -22,6 +23,7 @@ import 'pwacompat'
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueCarousel);
+Vue.use(VueWordCloud);
 Vue.use(FlagIcon);
 Vue.use(globalMixins);
 Vue.use(globalDirectives);
