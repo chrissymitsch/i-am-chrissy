@@ -28,41 +28,24 @@
             </div>
             <div class="section section-work">
                 <div class="md-layout-item text-center">
-                    <md-button class="md-success md-lg" @click="openPortfolioSection">{{$t('portfolio_button')}}</md-button>
+                    <md-button class="md-success md-lg" @click="openPortfolioSection">{{$t('portfolio_button')}}
+                    </md-button>
                 </div>
             </div>
             <div class="section section-work" id="portfolio" :class="{ 'md-hide': toggledPortfolioSection }">
                 <div class="container text-center">
                     PORTFOLIO
 
-                    <md-tabs class="md-primary" md-alignment="centered">
-                        <md-tab id="tab-apps" md-label="Apps">
-                            TBD
-                        </md-tab>
-
-                        <md-tab id="tab-games" md-label="Games">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/cHAKNQiiZkQ"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </md-tab>
-
-                        <md-tab id="tab-design" md-label="Design">
-                            TBD
-                        </md-tab>
-
-                        <md-tab id="tab-etc" md-label="etc.">
-                            <iframe title="vimeo-player" src="https://player.vimeo.com/video/240901556"
-                                    width="640"
-                                    height="360" frameborder="0" allowfullscreen></iframe>
-                            <iframe title="vimeo-player" src="https://player.vimeo.com/video/251237932"
-                                    width="640"
-                                    height="360" frameborder="0" allowfullscreen></iframe>
-                            <iframe title="vimeo-player" src="https://player.vimeo.com/video/244908737"
-                                    width="640"
-                                    height="360" frameborder="0" allowfullscreen></iframe>
-                        </md-tab>
-                    </md-tabs>
+                    <div class="md-layout">
+                        <div class="md-layout-item md-size-50">
+                            <div class="md-layout md-gutter">
+                                <div class="md-layout-item md-small-size-100">hi</div>
+                                <div class="md-layout-item md-small-size-100">ho</div>
+                                <div class="md-layout-item md-small-size-100">hu</div>
+                                <div class="md-layout-item md-small-size-100">hu</div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
