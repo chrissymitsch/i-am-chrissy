@@ -21,32 +21,14 @@
                     <knowledge></knowledge>
                 </div>
             </div>
-            <div class="section section-work" id="work">
+            <div class="section section-work" id="portfolio">
                 <div class="container">
-                    <work></work>
+                    <portfolio></portfolio>
                 </div>
             </div>
-            <div class="section section-work">
-                <div class="md-layout-item text-center">
-                    <md-button class="md-success md-lg" @click="openPortfolioSection">{{$t('portfolio_button')}}
-                    </md-button>
-                </div>
-            </div>
-            <div class="section section-work" id="portfolio" :class="{ 'md-hide': toggledPortfolioSection }">
-                <div class="container text-center">
-                    PORTFOLIO
-
-                    <div class="md-layout">
-                        <div class="md-layout-item md-size-50">
-                            <div class="md-layout md-gutter">
-                                <div class="md-layout-item md-small-size-100">hi</div>
-                                <div class="md-layout-item md-small-size-100">ho</div>
-                                <div class="md-layout-item md-small-size-100">hu</div>
-                                <div class="md-layout-item md-small-size-100">hu</div>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="section section-certification" id="certification">
+                <div class="container">
+                    <certification></certification>
                 </div>
             </div>
             <div class="section section-contact" id="contact">
@@ -63,7 +45,8 @@
     import Experience from "./components/ExperienceSection";
     import Knowledge from "./components/KnowledgeSection";
     import Profile from "./components/ProfileSection";
-    import Work from "./components/WorkSection";
+    import Portfolio from "./components/PortfolioSection";
+    import Certification from "./components/CertificationSection";
 
     export default {
         components: {
@@ -71,7 +54,8 @@
             Experience,
             Knowledge,
             Profile,
-            Work
+            Portfolio,
+            Certification
         },
         name: "index",
         bodyClass: "index-page",
@@ -83,9 +67,6 @@
                 /* eslint-enable global-require */
             }
         },
-        data: () => ({
-            toggledPortfolioSection: true
-        }),
         computed: {
             headerStyle() {
                 return {
@@ -93,11 +74,6 @@
                 };
             }
         },
-        methods: {
-            openPortfolioSection() {
-                this.toggledPortfolioSection = !this.toggledPortfolioSection;
-            }
-        }
     };
 </script>
 

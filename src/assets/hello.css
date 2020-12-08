@@ -4,16 +4,19 @@
     min-height: 32px;
 }
 
-.section-work{
+.section-contact, .section-experience, .section-work{
     background: #EEEEEE;
     padding-top: 8px;
 }
 
-.section-experience{
-    background: #EEEEEE;
+.section-knowledge, .section-certification {
     padding-top: 8px;
 }
 
-.section-knowledge{
-    padding-top: 8px;
+.skill-search {
+    padding-top: 32px;
+}
+
+.skill-table thead {
+    display: none;
 }

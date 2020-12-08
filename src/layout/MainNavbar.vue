@@ -101,6 +101,12 @@
                                                     </li>
                                                     <li>
                                                         <a href="javascript:void(0)"
+                                                           @click="scrollToElement('certification')"
+                                                           class="dropdown-item">{{$t('certs')}}
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)"
                                                            @click="scrollToElement('contact')"
                                                            class="dropdown-item">{{$t('contact')}}
                                                         </a>
@@ -108,41 +114,6 @@
                                                 </ul>
                                                 <!-- END -->
 
-                                                <!-- PORTFOLIO NAVIGATION -->
-                                                <ul v-if="menu == 'portfolio'"
-                                                    class="dropdown-menu dropdown-menu-right">
-                                                    <li>
-                                                        <a href="javascript:void(0)"
-                                                           @click="scrollToElement('app')"
-                                                           class="dropdown-item">{{$t('appdevelopment')}}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)"
-                                                           @click="scrollToElement('game')"
-                                                           class="dropdown-item">{{$t('gamedevelopment')}}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)"
-                                                           @click="scrollToElement('motion')"
-                                                           class="dropdown-item">{{$t('motiongraphics')}}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)"
-                                                           @click="scrollToElement('graphic')"
-                                                           class="dropdown-item">{{$t('graphicdesign')}}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)"
-                                                           @click="scrollToElement('contact')"
-                                                           class="dropdown-item">{{$t('contact')}}
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <!-- END -->
                                             </drop-down>
                                         </div>
                                     </a>

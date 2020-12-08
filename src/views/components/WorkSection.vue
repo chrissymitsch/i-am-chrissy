@@ -19,7 +19,7 @@
                                 <slide>
                                     <div class="carousel-caption">
                                         <p>
-                                            Game Design & Development
+                                            {{$t('game')}}
                                         </p>
                                     </div>
                                     <img :src="carousel1" alt="carousel1"/>
@@ -27,7 +27,7 @@
                                 <slide>
                                     <div class="carousel-caption">
                                         <p>
-                                            Logo Design
+                                            {{$t('logo')}}
                                         </p>
                                     </div>
                                     <img :src="carousel2" alt="carousel2"/>
@@ -35,7 +35,7 @@
                                 <slide>
                                     <div class="carousel-caption">
                                         <p>
-                                            Motion Graphics
+                                            {{$t('motion')}}
                                         </p>
                                     </div>
                                     <img :src="carousel3" alt="carousel3"/>
@@ -43,7 +43,7 @@
                                 <slide>
                                     <div class="carousel-caption">
                                         <p>
-                                            App Development
+                                            {{$t('app')}}
                                         </p>
                                     </div>
                                     <img :src="carousel3" alt="carousel4"/>

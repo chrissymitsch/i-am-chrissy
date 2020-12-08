@@ -1,29 +1,75 @@
 <template>
     <div class="wrapper">
         <div id="knowledge">
-            <div class="info">
+            <div class="info text-center">
                 <h3>{{$t('knowledge')}}</h3>
             </div>
 
-            <md-table v-model="searched" md-sort="name" md-sort-order="asc" md-card md-fixed-header>
-                <md-table-toolbar>
-                  <md-field md-clearable class="md-toolbar-section-end">
-                        <md-input :placeholder="$t('search')" v-model="search" @input="searchOnTable"/>
-                    </md-field>
-                </md-table-toolbar>
+            <div class="features text-center">
+                <div class="md-layout">
+                    <div class="md-layout-item md-medium-size-33 md-small-size-100">
+                        <div class="info">
+                            <div class="icon icon-info">
+                                <md-icon>star</md-icon>
+                            </div>
+                            <h4 class="info-title">{{$t('top_skills')}}</h4>
+                            <p>{{$t('top_skills_text')}}</p>
+                        </div>
+                    </div>
+                    <div class="md-layout-item md-medium-size-33 md-small-size-100">
+                        <div class="info">
+                            <div class="icon icon-success">
+                                <md-icon>emoji_people</md-icon>
+                            </div>
+                            <h4 class="info-title">{{$t('social_skills')}}</h4>
+                            <p>{{$t('social_skills_text')}}</p>
+                        </div>
+                    </div>
+                    <div class="md-layout-item md-medium-size-33 md-small-size-100">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <md-icon>favorite</md-icon>
+                            </div>
+                            <h4 class="info-title">{{$t('current_skills')}}</h4>
+                            <p>&#x1F384; {{$t('current_skills_text_1')}}</p>
+                            <p>&#x1F999; {{$t('current_skills_text_2')}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <md-table-empty-state
-                        md-label="No users found"
-                        :md-description="`No user found for this '${search}' query. Try a different search term or create a new user.`">
-                    <md-button class="md-primary md-raised" @click="newUser">Create New User</md-button>
-                </md-table-empty-state>
+            <div class="md-layout skill-search">
+                <div class="md-layout-item md-medium-size-70 md-small-size-100 mx-auto">
+                    <div class="md-layout">
+                        <div class="md-layout-item md-medium-size-70 mx-auto">
+                            <md-field md-clearable>
+                                <md-input :placeholder="$t('search')" v-model="search"/>
+                            </md-field>
+                        </div>
+                        <div class="md-layout-item md-medium-size-30 mx-auto text-center">
+                            <md-button class="md-primary md-round" @click="searchOnTable">{{$t('search_button')}}
+                                <md-icon>search</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-layout-item md-medium-size-70 md-small-size-100 mx-auto">
+                    <md-table class="skill-table" v-model="searched" md-sort="name" md-sort-order="asc" md-card md-fixed-header>
+                        <md-table-empty-state
+                                md-label="404"
+                                :md-description="`Wahrscheinlich kann ich '${search}' nicht. Suchen Sie lieber etwas anderes.`">
+                        </md-table-empty-state>
 
-                <md-table-row slot="md-table-row" slot-scope="{ item }">
-                    <md-table-cell md-label="Skill" md-sort-by="name">{{ item.name }}</md-table-cell>
-                    <md-table-cell md-label="Learned for" md-sort-by="type">{{ item.type }}</md-table-cell>
-                    <md-table-cell md-label="" md-sort-by="top"><badge v-if="item.top">{{ item.top }}</badge></md-table-cell>
-                </md-table-row>
-            </md-table>
+                        <md-table-row slot="md-table-row" slot-scope="{ item }">
+                            <md-table-cell md-sort-by="name">{{ item.name }}</md-table-cell>
+                            <md-table-cell md-sort-by="type">{{ item.type }}</md-table-cell>
+                            <md-table-cell md-sort-by="top">
+                                <badge v-if="item.top">{{ item.top }}</badge>
+                            </md-table-cell>
+                        </md-table-row>
+                    </md-table>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -59,7 +105,12 @@
                     top: "Top Skill"
                 },
                 {
-                    name: "Angular",
+                    name: "JavaScript",
+                    type: "Private & Study & Work",
+                    top: "Top Skill"
+                },
+                {
+                    name: "Angular, AngularJS",
                     type: "Work",
                     top: "Top Skill"
                 },
@@ -70,13 +121,11 @@
                 },
                 {
                     name: "Vue.js",
-                    type: "Study & Private",
-                    top: "Top Skill"
+                    type: "Study & Private"
                 },
                 {
                     name: "User Experience (UX)",
-                    type: "Study",
-                    top: "Top Skill"
+                    type: "Study"
                 },
                 {
                     name: "Gamification",
@@ -89,13 +138,31 @@
                     top: "Top Skill"
                 },
                 {
-                    name: "Photoshop",
+                    name: "Adobe Photoshop",
+                    type: "Private",
+                    top: "Top Skill"
+                },
+                {
+                    name: "Adobe Illustrator",
                     type: "Private",
                     top: "Top Skill"
                 },
                 {
                     name: "Adobe Creative Cloud (CC)",
                     type: "Private"
+                },
+                {
+                    name: "Unity3D / Unity2D",
+                    type: "Private"
+                },
+                {
+                    name: "C#",
+                    type: "Study & Private"
+                },
+                {
+                    name: "Agile Process Methods (Scrum, Kanban)",
+                    type: "Work",
+                    top: "Top Skill"
                 },
             ]
         }),

@@ -22,7 +22,7 @@ const messages = {
             'In addition to my job, I practice various media computer design works, such as media and graphic design, ' +
             'game development, web and app development, 2D/3D animation and UX/UI/HC design.',
         bioTxt0: 'Diversive Developer',
-        bioTxt1: 'Media Computer Master',
+        bioTxt1: 'Computer Science & Media Applications Master',
         bioTxt2: 'Gamification Geek',
         degree: 'Degree',
         birthday: 'October 2nd, 1988',
@@ -32,17 +32,17 @@ const messages = {
         location_label: 'Location',
         keywords: 'Keywords',
         currently: 'Currently',
-        certs: 'Certification',
         personal: 'Personal',
         experience: 'Experience',
 
         education: 'Education',
         details: 'more details',
-        education1: 'Master of Science, Media Computer Science',
+        education1: 'Master of Science, Computer Science and Media Applications',
         education1_1: 'Technische Hochschule Luebeck',
         education1_2: 'Interactive 3D, Human-Computer-Interaction, Gamification',
         education1_3: 'Master\'s Thesis',
-        education1_4: '"Conception and development of a gamified human-centered design tool to support and motivate the development of IT projects"',
+        education1_4: '"Conception and development of a gamified human-centered design tool to support and motivate' +
+            'the development of IT projects"',
         education2: 'Bachelor of Science, Computer Science',
         education2_1: 'Friedrich-Alexander-University Erlangen-Nuremberg',
         education2_2: 'Medical Computer Science, Database Systems, Media Computer Science',
@@ -68,11 +68,65 @@ const messages = {
         tasks: 'Tasks',
 
         knowledge: 'Knowledge',
+        top_skills: 'Top Skills',
+        top_skills_text: 'JavaScript, Angular, Typescript, Java EE, Adobe Photoshop & Illustrator',
+        social_skills: 'Social Skills',
+        social_skills_text: 'CliftonStrengths: Empathy, Adaptability, Communication, Relator, Includer',
+        current_skills: 'Current hobbies',
+        current_skills_text_1: 'Solving Advent of Code 2020 puzzles.',
+        current_skills_text_2: 'Building a mobile game called "Alpacas in Space".',
         search: 'What are you searching for?',
+        search_button: 'Search my skills',
 
         work: 'Work & Projects',
 
-        portfolio_button: 'View Portfolio Page',
+        portfolio_button_show: 'Open Portfolio',
+        portfolio_button_hide: 'Close Portfolio',
+        game: 'Game Design & Development',
+        logo: 'Logo Design',
+        motion: 'Motion Graphics',
+        app: 'App Development',
+
+        weebo_title: 'Human-Centered Design Tool with Gamification (Weebo)',
+        weebo_description: 'As part of my master\'s thesis, I developed a progressive web app (PWA) to motivate ' +
+            'stakeholders of IT projects during development and to support them with the human-centered design approach.',
+        weebo_tags: 'PWA, Vue.js, HCD',
+        doit_title: 'Do or do not, there is no try',
+        doit_description: 'Also during my media computer science studies, I developed a simple to-do list app.',
+        doit_tags: 'Java',
+        ais_title: 'Alpacas in Space',
+        ais_description: 'As a pastime during the Corona pandemic, I started developing a mobile game. As a feature, ' +
+            'I chose 2D graphics with traditional frame-by-frame animation and watercolor techniques. The game can be ' +
+            'played with up to 8 people and is intended to promote communication and collaboration among each other.',
+        ais_tags: 'Unity2D, C#, Multiplayer, Mirror',
+        citw_title: 'Cats in the Woods',
+        citw_description: 'I was able to develop and present a fully designed, playable level made in Unity3D for the ' +
+            '"Game Design" module of my media computer science studies. I also learned how to create and maintain a ' +
+            'game design document.',
+        citw_tags: 'Unity3D, C#, GDD',
+        logo_description: 'For various customers I designed logos in Adobe Illustrator to practise my skills in' +
+            'designing, composing and marketing ideas.',
+        logo_tags: 'Chancellery, Real estate, Music, Yoga trainer, Pets, Entertainment, Craftsman',
+        motion_description: 'During my master\'s degree in media computer science, I was able to gain experience in ' +
+            'creating videos and motion graphics. For this I used Adobe After Effects and various techniques such as ' +
+            'green screen, vector graphics, cutouts, etc.',
+        motion_tags: 'Moton Graphics Interfaces, Adobe After Effects',
+
+        certs: 'Certification',
+        cert6_title: 'Master of Science with distinction',
+        cert6_description: 'TH Lübeck - 2020',
+        cert5_title: 'Angular & Typescript Intensive Training',
+        cert5_description: 'workshops.de - 2020',
+        cert4_title: 'Machine Learning Hackathon - Creative Award',
+        cert4_description: 'immowelt AG - 2019',
+        cert3_title: 'Camunda BPM for Java Developers',
+        cert3_description: 'camunda services GmbH - 2019',
+        cert2_title: 'Java EE 8 Update',
+        cert2_description: 'New Elements GmbH - 2019',
+        cert1_title: 'AEM Sites: Advanced Developer',
+        cert1_description: 'Adobe - 2015',
+        cert0_title: 'Agile and Scrum Basics',
+        cert0_description: 'HOOD GmbH - 2014',
 
         contact: 'Contact me',
         contact_1: 'If you want to get in contact with me, send me a message or add me on',
@@ -108,7 +162,6 @@ const messages = {
         location_label: 'Wohnort',
         keywords: 'Stichworte',
         currently: 'Momentan',
-        certs: 'Zertifikate',
         personal: 'Persönlich',
         experience: 'Erfahrung',
 
@@ -118,7 +171,8 @@ const messages = {
         education1_1: 'Technische Hochschule Lübeck',
         education1_2: 'Interactive 3D, Human-Computer-Interaction, Gamification',
         education1_3: 'Masterarbeit',
-        education1_4: '"Konzeption und Entwicklung eines gamifizierten Human-Centered Design Tools zur Unterstützung und Motivation bei der Entwicklung von IT-Projekten"',
+        education1_4: '"Konzeption und Entwicklung eines gamifizierten Human-Centered Design Tools zur Unterstützung' +
+            'und Motivation bei der Entwicklung von IT-Projekten"',
         education2: 'Bachelor of Science, Informatik',
         education2_1: 'Friedrich-Alexander-Universität Erlangen-Nürnberg',
         education2_2: 'Medizinische Informatik, Datenbanksysteme, Medieninformatik',
@@ -144,11 +198,68 @@ const messages = {
         tasks: 'Aufgaben',
 
         knowledge: 'Kenntnisse',
+        top_skills: 'Top Fähigkeiten',
+        top_skills_text: 'JavaScript, Angular, Typescript, Java EE, Adobe Photoshop & Illustrator',
+        social_skills: 'Soziale Fähigkeiten',
+        social_skills_text: 'CliftonStrengths: Einfühlung, Anpassung, Kommunikation, Bindung, Integration',
+        current_skills: 'Momentane Hobbys',
+        current_skills_text_1: 'Advent of Code 2020 Rätsel lösen.',
+        current_skills_text_2: 'Mobiles Game "Alpacas in Space" entwickeln.',
+        search_button: 'Durchsuchen Sie meine Fähigkeiten',
         search: 'Wonach suchen Sie?',
 
         work: 'Arbeiten & Projekte',
 
-        portfolio_button: 'Zum Portfolio',
+        portfolio_button_show: 'Portfolio öffnen',
+        portfolio_button_hide: 'Portfolio schließen',
+        game: 'Game Design & Development',
+        logo: 'Logo Design',
+        motion: 'Motion Graphics',
+        app: 'App Development',
+
+        weebo_title: 'Human-Centered Design Tool mit Gamification (Weebo)',
+        weebo_description: 'Im Rahmen meiner Masterarbeit habe ich eine progressive Webapp (PWA) entwickelt, um ' +
+            'Stakeholder von IT-Projekten während der Entwicklung zu motivieren und in Bezug auf den nutzerzentrierten ' +
+            'Designansatz zu unterstützen.',
+        weebo_tags: 'PWA, Vue.js, HCD',
+        doit_title: 'Do or do not, there is no try',
+        doit_description: 'Ebenfalls während meines Medieninformatik-Studiums habe ich im Modul "Mobile App Development" ' +
+            'eine einfache ToDo-Listen-App entwickelt.',
+        doit_tags: 'Java',
+        ais_title: 'Alpacas in Space',
+        ais_description: 'Als Zeitvertreib während der Corona-Pandemie habe ich begonnen, ein mobiles Spiel für ' +
+            'Smartphones zu entwickeln. Als Merkmal habe ich mich für eine 2D-Grafik mit traditioneller Frame-by-Frame-' +
+            'Animation und Aquarelltechnik entschieden. Das Spiel kann mit bis zu 8 Personen gespielt werden und soll ' +
+            'Kommunikation und Zusammenarbeit untereinander fördern.',
+        ais_tags: 'Unity2D, C#, Multiplayer, Mirror',
+        citw_title: 'Cats in the Woods',
+        citw_description: 'Ein fertig designtes, spielbares Level konnte ich im Modul "Game Design" meines ' +
+            'Medieninformatik-Studiums in Unity3D entwickeln und präsentieren. Außerdem habe ich dabei gelernt, wie ' +
+            'ein Game-Design-Dokument erstellt und gepflegt wird.',
+        citw_tags: 'Unity3D, C#, GDD',
+        logo_description: 'Für verschiedene Kunden habe ich Logos in Adobe Illustrator entworfen, um meine Fähigkeiten' +
+            'in Design, Komposition und Ideenvermarktung zu erweitern.',
+        logo_tags: 'Kanzlei, Immobilienmakler, Musik, Yoga-Trainer, Tiere, Unterhaltung, Handwerk',
+        motion_description: 'Während meines Masterstudiums in Medieninformatik konnte ich Erfahrung in der Erstellung ' +
+            'von Videos, bzw. Motion Graphics sammeln. Hierfür benutzte ich das Programm Adobe After Effects und ' +
+            'verwendete verschiedene Techniken, wie Greenscreen, Vektorgrafiken, Cutouts usw.',
+        motion_tags: 'Motion Graphics Interfaces, Adobe After Effects',
+
+        certs: 'Auszeichnungen',
+        cert6_title: 'Master of Science mit Auszeichnung',
+        cert6_description: 'TH Lübeck - 2020',
+        cert5_title: 'Angular & Typescript Intensivschulung',
+        cert5_description: 'workshops.de - 2020',
+        cert4_title: 'Machine Learning Hackathon - Kreativpreis',
+        cert4_description: 'immowelt AG - 2019',
+        cert3_title: 'Camunda BPM für Java-Entwickler',
+        cert3_description: 'camunda services GmbH - 2019',
+        cert2_title: 'Java EE 8 Update',
+        cert2_description: 'New Elements GmbH - 2019',
+        cert1_title: 'AEM Sites: Advanced Developer',
+        cert1_description: 'Adobe - 2015',
+        cert0_title: 'Agile und Scrum Basistraining',
+        cert0_description: 'HOOD GmbH - 2014',
 
         contact: 'Kontakt',
         contact_1: 'Senden Sie mir eine Nachricht oder vernetzen Sie sich mit mir auf',
