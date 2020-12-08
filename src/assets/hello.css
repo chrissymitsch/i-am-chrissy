@@ -20,3 +20,10 @@
 .skill-table thead {
     display: none;
 }
+
+.skill-type-badges {
+    float: right;
+}
+.skill-type-badges .badge {
+    margin-left: 8px;
+}

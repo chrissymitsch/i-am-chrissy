@@ -9,7 +9,7 @@
                 <div class="md-layout">
                     <div class="md-layout-item md-medium-size-33 md-small-size-100">
                         <div class="info">
-                            <div class="icon icon-info">
+                            <div class="icon icon-warning">
                                 <md-icon>star</md-icon>
                             </div>
                             <h4 class="info-title">{{$t('top_skills')}}</h4>
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="md-layout skill-search">
+            <div class="md-layout skill-search" v-if="finishedLoading && skills && skills.length > 0">
                 <div class="md-layout-item md-medium-size-70 md-small-size-100 mx-auto">
                     <div class="md-layout">
                         <div class="md-layout-item md-medium-size-70 mx-auto">
@@ -54,17 +54,27 @@
                     </div>
                 </div>
                 <div class="md-layout-item md-medium-size-70 md-small-size-100 mx-auto">
-                    <md-table class="skill-table" v-model="searched" md-sort="name" md-sort-order="asc" md-card md-fixed-header>
+                    <md-table class="skill-table" v-model="searched" md-sort="name" md-sort-order="asc" md-card
+                              md-fixed-header>
                         <md-table-empty-state
                                 md-label="404"
-                                :md-description="`Wahrscheinlich kann ich '${search}' nicht. Suchen Sie lieber etwas anderes.`">
+                                :md-description="`Skill not found.`">
                         </md-table-empty-state>
 
                         <md-table-row slot="md-table-row" slot-scope="{ item }">
+                            <md-table-cell md-sort-by="top" class="text-center">
+                                <div v-if="item.top" class="icon icon-warning">
+                                    <md-tooltip md-direction="top">Top Skill</md-tooltip>
+                                    <md-icon>star</md-icon>
+                                </div>
+                            </md-table-cell>
                             <md-table-cell md-sort-by="name">{{ item.name }}</md-table-cell>
-                            <md-table-cell md-sort-by="type">{{ item.type }}</md-table-cell>
-                            <md-table-cell md-sort-by="top">
-                                <badge v-if="item.top">{{ item.top }}</badge>
+                            <md-table-cell md-sort-by="type" class="skill-type-badges">
+                                <span v-for="type in item.type" :key="type">
+                                    <badge :type="getBadgeType(type)">
+                                        {{type}}
+                                    </badge>
+                                </span>
                             </md-table-cell>
                         </md-table-row>
                     </md-table>
@@ -75,6 +85,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
     import Badge from "../../components/Badge";
 
     const toLower = text => {
@@ -91,92 +102,32 @@
 
     export default {
         components: {Badge},
+        computed: {
+            ...mapState('skills', ['skills'])
+        },
         data: () => ({
-            amount: 30,
-            amount2: 60,
-            buffer: 40,
-
+            finishedLoading: false,
             search: null,
-            searched: [],
-            users: [
-                {
-                    name: "Java EE",
-                    type: "Study & Work",
-                    top: "Top Skill"
-                },
-                {
-                    name: "JavaScript",
-                    type: "Private & Study & Work",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Angular, AngularJS",
-                    type: "Work",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Typescript",
-                    type: "Work",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Vue.js",
-                    type: "Study & Private"
-                },
-                {
-                    name: "User Experience (UX)",
-                    type: "Study"
-                },
-                {
-                    name: "Gamification",
-                    type: "Study",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Human-Centered Design",
-                    type: "Study",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Adobe Photoshop",
-                    type: "Private",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Adobe Illustrator",
-                    type: "Private",
-                    top: "Top Skill"
-                },
-                {
-                    name: "Adobe Creative Cloud (CC)",
-                    type: "Private"
-                },
-                {
-                    name: "Unity3D / Unity2D",
-                    type: "Private"
-                },
-                {
-                    name: "C#",
-                    type: "Study & Private"
-                },
-                {
-                    name: "Agile Process Methods (Scrum, Kanban)",
-                    type: "Work",
-                    top: "Top Skill"
-                },
-            ]
+            searched: []
         }),
         methods: {
-            newUser() {
-                window.alert('Noop')
-            },
             searchOnTable() {
-                this.searched = searchByName(this.users, this.search)
+                this.searched = searchByName(JSON.parse(JSON.stringify(this.skills)), this.search)
+            },
+            getBadgeType(type) {
+                if (type === 'Study') return 'rose';
+                if (type === 'Private') return 'info';
+                if (type === 'Work') return 'primary';
+                return '';
             }
         },
         created() {
-            this.searched = this.users
-        }
+            this.$store.dispatch('skills/getSkills').then(() => {
+                this.searched = JSON.parse(JSON.stringify(this.skills));
+            }).finally(() => {
+                this.finishedLoading = true;
+            });
+        },
     }
 </script>
 
