@@ -7,15 +7,16 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">
+                            <router-link to="/impressum">
                                 Impressum
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </nav>
                 <div class="copyright">
                     &copy; {{ year }}, made with
                     <md-icon>favorite</md-icon>
+                    and Vue.js
                 </div>
             </div>
         </div>
